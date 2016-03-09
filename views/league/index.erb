@@ -1,0 +1,33 @@
+<table>
+<caption>Alison and Adam's Awesome League Table</caption>
+  <thead>
+    <tr>
+      <th>Team</th>
+      <th>Wins</th>
+      <th>Loss</th>
+      <th>Draw</th>
+      <th>Goals For</th>
+      <th>Goals Against</th>
+      <th>Goals Difference</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @league.teams.each do |team| %>
+    <tr>
+      <td><%= team.name %></td>
+      <td><%= @league.number_of_wins( team.id ) %></td>
+      <td><%= @league.number_of_loses( team.id ) %></td>
+      <td><%= @league.number_of_draws( team.id ) %></td>
+      <td><%= @league.total_goals_for( team.id ) %></td>
+      <td><%= @league.total_goals_against( team.id ) %></td>
+      <td><%= @league.goal_difference( team.id ) %></td>
+      <td><%= @league.total_points( team.id ) %></td>
+    </tr>
+
+
+    <% end %>
+  </tbody>
+
+</table>
+
